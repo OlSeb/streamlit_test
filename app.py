@@ -7,35 +7,17 @@ import numpy as np
 '''
 # VerbaMachina
 '''
-import os
 
-# Set the background image using custom CSS
-page_bg_img = '''
-<style>
-body {
-background-image: url("harry_potter_image.jpg");
-background-size: cover;
-}
-</style>
-'''
+# Set the page configuration
+st.set_page_config(
+    page_title="My App",
+    page_icon=":guardsman:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    page_bg_img="harry_potter_image.jpg"
+)
 
-# Render the HTML in Streamlit
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
-
-# Get the file path of the image
-# image_path = os.path.join(os.getcwd(), "harry_potter_image.jpg")
-
-# # Set the page configuration
-# st.set_page_config(
-#     page_title="My App",
-#     page_icon=":guardsman:",
-#     layout="wide",
-#     initial_sidebar_state="expanded",
-#     page_bg_img="/harry_potter_image.jpg"
-# )
-
-# st.write(f"Number of passenger(s):5")
+st.write(f"Number of passenger(s):5")
 
 # parameters = {
 #     'pickup_datetime': date_time,
