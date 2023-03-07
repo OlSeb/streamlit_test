@@ -1,6 +1,6 @@
 import streamlit as st
-import requests
-import urllib.parse
+# import requests
+# import urllib.parse
 # import datetime
 import pandas as pd
 import numpy as np
