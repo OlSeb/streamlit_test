@@ -4,20 +4,56 @@ import streamlit as st
 # import datetime
 import pandas as pd
 import numpy as np
-'''
-# VerbaMachina
-'''
 
-# Set the page configuration
-st.set_page_config(
-    page_title="My App",
-    page_icon=":guardsman:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    page_bg_img="harry_potter_image.jpg"
+# # Set the page configuration
+import base64
+
+
+def get_base64(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+
+def set_background(png_file):
+    bin_str = get_base64(png_file)
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url("data:image/jpg;base64,%s");
+    background-size: cover;
+    }
+    </style>
+    ''' % bin_str
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+
+set_background('./harry_potter_image.jpg')
+
+
+# Add some CSS to the Streamlit app to align the text to the right
+st.markdown(
+    """
+    <style>
+    body {
+        text-align: right;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
-st.write(f"Number of passenger(s):5")
+# Write some text to the app
+'''
+# Chat with Harry Potter
+'''
+
+st.write("Hey there, I'm Harry!")
+
+
+
+
+
+
 
 # parameters = {
 #     'pickup_datetime': date_time,
