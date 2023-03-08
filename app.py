@@ -46,12 +46,23 @@ st.markdown(
 '''
 # Chat with Harry Potter
 '''
+# Define the Streamlit app
+def app():
 
-st.write("Hey there, I'm Harry!")
+    # Define a text input for the user's message
+    message = st.text_input('You:', '')
+
+    # Define a button to submit the user's message
+    if st.button('Send'):
+        # Generate a response from the chatbot based on the user's message
+        response = chatbot.get_response(message)
+
+        # Display the chatbot's response
+        st.text_area('Chatbot:', value=str(response))
 
 
 
-
+app()
 
 
 
